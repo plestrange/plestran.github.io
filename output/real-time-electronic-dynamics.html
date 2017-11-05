@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Flash Facts</title>
+	<meta name="description" content="">
+	<meta name="author" content="Patrick Lestrange">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://plestran.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="http://plestran.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="http://plestran.github.io/theme/local.css" rel="stylesheet">
+	<link href="http://plestran.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="http://plestran.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Flash Facts Atom Feed" />
+
+
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="http://plestran.github.io/">Flash Facts</a>
+			<ul class="nav">
+					<li ><a href="http://plestran.github.io/category/politics.html">politics</a></li>
+					<li class="active"><a href="http://plestran.github.io/category/quantum-mechanics.html">quantum-mechanics</a></li>
+			</ul>
+			<p class="pull-right"><a href="http://plestran.github.io/archives.html">[archives]</a> <a href="http://plestran.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Links</h3>
+			<ul>
+				<li><a href="https://github.com/plestran/">GitHub</a></li>
+				<li><a href="http://depts.washington.edu/ligroup/people/patrick-lestrange/">UW Website</a></li>
+				<li><a href="https://scholar.google.com/citations?user=_p09HUIAAAAJ&hl=en">Google Scholar</a></li>
+			</ul>
+<!--			<div class="social">
+			<h3>Social</h3>
+			<ul>
+			</ul>
+			</div>
+-->
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Real-time Electronic Dynamics</h1></div>
+		<div class="well small">Permalink: <a class="more" href="http://plestran.github.io/real-time-electronic-dynamics.html">2017-11-04 09:00:00-07:00</a>
+by <a class="url fn" href="http://plestran.github.io/author/patrick-lestrange.html">Patrick Lestrange </a>
+ in <a href="http://plestran.github.io/category/quantum-mechanics.html">quantum-mechanics</a>
+tags: <a href="http://plestran.github.io/tag/electronic-structure-theory.html">electronic-structure-theory</a> </div>
+		<div><style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Watching-Electrons-Absorb-Light">Watching Electrons Absorb Light<a class="anchor-link" href="#Watching-Electrons-Absorb-Light">¶</a></h1><p>I wanted connect this blog to some of the things I worked on while getting my PhD. I'm going to explain a little about how to make a movie using data from a calculation I would do. Note: I didn't actually do these calculations, but I did make the videos.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">'Tj0bNTKHSQs'</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe allowfullscreen="" frameborder="0" height="450" src="https://www.youtube.com/embed/Tj0bNTKHSQs" width="800"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Quantum-Refresher">Quantum Refresher<a class="anchor-link" href="#Quantum-Refresher">¶</a></h1><p>Electronic structure theory (EST) is the study of electrons using quantum mechanics. Electrons are super important in chemistry! They’re the glue that hold moelcules together and you can understand a lot of reactions by understand how they move. I wanted to explain how to visualize electrons as they’re described in my calculations. But before we get to that, I want to give a quick refresher on quantum mechanics.</p>
+<p>You’ve likely heard the idea that electrons can act as both <a href="https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality">particles and as waves</a>. This idea comes from the concept of a “wave function”, which describes the position and momentum of a particle. What a wave function really “means” is rather complicated, so I’ll just point you to <a href="https://en.wikipedia.org/wiki/Wave_function">Wikipedia</a> and references therein. From its wave function you can determine a probability distribution of an electron’s likely position and momentum. If we can visualize the wave function (or this probability distribution), then we can see where electrons like to hang out in a molecule.</p>
+<p>Here's an example for a quantum harmonic oscillator. It looks like a bunch of sine <em>waves</em> oscillating in time. This is a lot like what we'll be visualing for the electrons, but in three dimensions instead of one.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">html</span>
+<p>
+<a href="https://commons.wikimedia.org/wiki/File:QuantumHarmonicOscillatorAnimation.gif#/media/File:QuantumHarmonicOscillatorAnimation.gif">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/90/QuantumHarmonicOscillatorAnimation.gif" alt="QuantumHarmonicOscillatorAnimation.gif" width="400"></a>
+<br>By <a href="//commons.wikimedia.org/wiki/User:Sbyrnes321" title="User:Sbyrnes321">Sbyrnes321</a> - 
+<span class="int-own-work" lang="en">Own work</span>, 
+<a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, 
+<a href="https://commons.wikimedia.org/w/index.php?curid=14059905">Link</a>
+</p>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_html rendered_html output_subarea ">
+<p>
+<a href="https://commons.wikimedia.org/wiki/File:QuantumHarmonicOscillatorAnimation.gif#/media/File:QuantumHarmonicOscillatorAnimation.gif">
+<img alt="QuantumHarmonicOscillatorAnimation.gif" src="https://upload.wikimedia.org/wikipedia/commons/9/90/QuantumHarmonicOscillatorAnimation.gif" width="400" /></a>
+<br />By <a href="//commons.wikimedia.org/wiki/User:Sbyrnes321" title="User:Sbyrnes321">Sbyrnes321</a> - 
+<span class="int-own-work" lang="en">Own work</span>, 
+<a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication">CC0</a>, 
+<a href="https://commons.wikimedia.org/w/index.php?curid=14059905">Link</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will be let us watch how electrons move during a reaction!</p>
+<p>When you want to model a large molecule, it’s sometimes easier to break it up into important and less important regions. The calculation I want to visualize has a section modeled with quantum mechanics (QM) and a section modeled with classical mechanics or molecular mechanics (MM). This is a practical way to describe a large molecule that you can’t afford to use quantum mechanics to describe. Plus this concept led to a couple <a href="https://cen.acs.org/articles/91/i41/2013-Nobel-Prize-Chemistry.html">Nobel prizes in 2013</a>, so I think it’s safe to say it’s a useful tool.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/Articleimage/2012/CS/c2cs15297e/c2cs15297e-f3.gif"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<img src="http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/Articleimage/2012/CS/c2cs15297e/c2cs15297e-f3.gif" width="600">
+</img></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post, we’re going to look at a calculation where some of the electrons have wave functions (in the QM part) and where the rest of the electrons are approximated by <a href="https://en.wikipedia.org/wiki/Dipole">dipoles</a> (in the MM part). All the theory and background for the method used in this post can be found in a <a href="http://pubs.acs.org/doi/10.1021/acs.jpclett.7b02320">great paper</a> published earlier this year.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Visualization-Strategy">Visualization Strategy<a class="anchor-link" href="#Visualization-Strategy">¶</a></h1><p>We need a way to plot the electrons in the QM region and in the MM region. The common strategy in EST is to generate a 3D grid representing the spatial extent of some function: either a one-electron wave function or the total electronic density. This is usually referred to as a <a href="http://gaussian.com/cubegen/">cube file</a>. After picking a value for this function, you can plot an <a href="https://en.wikipedia.org/wiki/Isosurface">isosurface</a> to see what it looks like. There are a number of software packages (<a href="https://avogadro.cc/">Avogadro</a>, <a href="http://www.cmbi.ru.nl/molden/">Molden</a>, <a href="http://gaussian.com/gv6glance/">GaussView</a>) that can generate cube files and visualize isosurfaces using information from standard quantum chemistry software packages (<a href="https://orcaforum.cec.mpg.de/">ORCA</a>, <a href="http://daltonprogram.org/">DALTON</a>, <a href="http://gaussian.com/">Gaussian</a>). For the MM region, we want to represent the dipole on each atom. We can do this by plotting an arrow along the vector defining the dipole originating from that atom.</p>
+<p>Generating a single image is pretty straightforward with the visualization packages I mentioned above. But we’re trying to make a movie! So we need to make a lot of images all using slightly different information from the simulation. I’ve found <a href="https://www.schrodinger.com/pymol">PyMOL</a> to be a great tool for this. It’s built off python, so if you know any python, then PyMOL can definitely be a friend to you. The newest version is not free, but there are older open-source versions that you can find online through <a href="https://pymolwiki.org/index.php/Category:Installation">various package managers</a>. With this it’s easy to loop through all the information from our calculation and render the movie one frame at a time.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Getting-to-the-Fun-Stuff">Getting to the Fun Stuff<a class="anchor-link" href="#Getting-to-the-Fun-Stuff">¶</a></h1><p>We’ll get into an example showing the dynamics of <a href="https://en.wikipedia.org/wiki/Rhodopsin">rhodopsin</a>. Actually, we’re going to look at a very small part of rhodopsin for simplicity, but you could certainly scale this up to the whole protein if you have the computational resources. This is based off a similar <a href="https://github.com/liresearchgroup/pymol-movie">example on Github</a>. You can grab this code from that repository as well.</p>
+<p>First we'll import some useful things for later on.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span> <span class="mi">22</span><span class="p">})</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">ImageDraw</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">ImageFont</span>
+
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">takewhile</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first thing we need to do is build all the cube files representing how the electron density changes over the course of the simulation. We’re going to view the density difference relative to the initial density. It’s easier to see what’s going on if we focus on the change instead of the whole thing. We’ll also be taking the same approach when visualizing the dipoles in the MM region. My first script <strong>build_cubes.py</strong> loops over the densities printing in the output file from the simulation, places them in a formatted checkpoint file, and then used Gaussian’s <a href="http://gaussian.com/cubegen/">cubegen</a> utility to build the cube files. After this point, we can render all the frames with PyMOL.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gauss_parse</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="c1">#------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">grab_densities</span><span class="p">(</span><span class="n">f_name</span><span class="p">):</span>
+    <span class="sd">''' Grab densities out of the log file. </span>
+
+<span class="sd">        nbasis:   The number of basis functions </span>
+<span class="sd">        den_real: List of numpy arrays for the real part of the densities</span>
+<span class="sd">        den_imag: List of numpy arrays for the imaginary part of the densities</span>
+<span class="sd">    '''</span>
+
+    <span class="c1"># Find the number of basis functions</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f_name</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">'basis functions'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">nbasis</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Find the real densities</span>
+    <span class="n">den_real</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">' Density (real)'</span><span class="p">):</span>              
+                <span class="n">data</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">takewhile</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="ow">not</span> 
+                         <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">' Density (imaginary)'</span><span class="p">),</span><span class="n">f</span><span class="p">)))</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'D'</span><span class="p">,</span><span class="s1">'E'</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+                <span class="n">elements</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span> 
+                    <span class="k">if</span> <span class="s1">'E'</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span> 
+                        <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">den_real</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_symmetric</span><span class="p">(</span><span class="n">create_matrix</span><span class="p">(</span><span class="n">elements</span><span class="p">,</span><span class="n">nbasis</span><span class="p">)))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Have </span><span class="si">%d</span><span class="s2"> real densities"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">den_real</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">nbasis</span><span class="p">,</span> <span class="n">den_real</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+
+<span class="c1"># define the name of the input files</span>
+<span class="n">logfile</span><span class="p">,</span> <span class="n">fchkfile</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># grab the densities from the logfile</span>
+<span class="n">nbasis</span><span class="p">,</span> <span class="n">d_r</span> <span class="o">=</span> <span class="n">grab_densities</span><span class="p">(</span><span class="n">logfile</span><span class="p">)</span>
+<span class="n">ntt</span> <span class="o">=</span> <span class="n">nbasis</span> <span class="o">*</span> <span class="p">(</span><span class="n">nbasis</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># define the ground state density and first zero density</span>
+<span class="n">ground_density</span> <span class="o">=</span> <span class="n">d_r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">d_r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">ground_density</span> 
+
+<span class="c1"># define how many densities to skip </span>
+<span class="n">nskip</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># create a directory to store the new fchk/cube files</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">'fchk-cube-files'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+
+<span class="c1"># create new fchk files using the grabbed densities</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">density</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d_r</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Building fchk for density : '</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">nskip</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   
+        <span class="c1"># grab the LT form the of the density to put in the fchk file </span>
+        <span class="n">il</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tril_indices</span><span class="p">(</span><span class="n">nbasis</span><span class="p">)</span>
+        <span class="n">density</span>  <span class="o">=</span> <span class="n">density</span><span class="p">[</span><span class="n">il</span><span class="p">]</span>
+        <span class="n">density</span>  <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">density</span><span class="p">]</span>
+
+        <span class="c1"># everything is in rows of 5 numbers</span>
+        <span class="n">remainder</span> <span class="o">=</span> <span class="n">ntt</span> <span class="o">%</span> <span class="mi">5</span>
+
+        <span class="c1"># generate the list of strings for writing the density</span>
+        <span class="n">den_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ntt</span><span class="o">-</span><span class="n">remainder</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">den_string</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%16.8E</span><span class="s1">'</span><span class="o">*</span><span class="mi">5</span> <span class="o">%</span> <span class="p">(</span><span class="n">density</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">density</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">density</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> 
+                 <span class="n">density</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">],</span> <span class="n">density</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">4</span><span class="p">])</span>
+            <span class="n">den_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">den_string</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">remainder</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">mod_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">remainder</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> 
+                <span class="n">mod_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">density</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="n">den_string</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%16.8E</span><span class="s1">'</span><span class="o">*</span><span class="n">remainder</span> <span class="o">%</span> <span class="n">mod_list</span>
+            <span class="n">den_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">den_string</span><span class="p">)</span>
+     
+        <span class="c1"># write the density difference to the fchk file</span>
+        <span class="n">new_fchk</span>  <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">-</span><span class="si">%04d</span><span class="s1">.fchk'</span> <span class="o">%</span> <span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">fchkfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">template</span>  <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fchkfile</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
+        <span class="n">new_f</span>     <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">new_fchk</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span>
+        <span class="n">write_den</span><span class="p">,</span> <span class="n">d_list_count</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">template</span><span class="p">:</span>
+            <span class="c1"># figure out where to write density</span>
+            <span class="k">if</span> <span class="s1">'SCF Density'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">write_den</span>  <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">den_header</span> <span class="o">=</span> <span class="n">line</span>
+            <span class="k">if</span> <span class="s1">'Mulliken Charges'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">write_den</span> <span class="o">=</span> <span class="kc">False</span>
+    
+            <span class="c1"># write the density difference if at the right spot</span>
+            <span class="k">if</span> <span class="n">write_den</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">d_list_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+                    <span class="n">new_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">den_header</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">den_list</span><span class="p">[</span><span class="n">d_list_count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+                <span class="n">d_list_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1"># write the rest of the template fchk file</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">template</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">new_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
+    
+        <span class="c1"># generate the cube for the density difference</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Generating cube for density : '</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">cube_file</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">-</span><span class="si">%04d</span><span class="s1">.cube'</span> <span class="o">%</span> <span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">fchkfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">call</span><span class="p">([</span><span class="s1">'cubegen'</span><span class="p">,</span><span class="s1">'0'</span><span class="p">,</span><span class="s1">'density=scf'</span><span class="p">,</span><span class="n">new_fchk</span><span class="p">,</span><span class="n">cube_file</span><span class="p">])</span>  
+
+        <span class="c1"># fix the cube file to be read by pymol</span>
+        <span class="c1"># Note: newer versions of cubegen add an extra '1' to the 3rd line </span>
+        <span class="c1">#       and this needs to be removed so pymol can read it correctly</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">cube_file</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'    1</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="s1">' </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">fix_cube</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">cube_file</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span>
+        <span class="n">fix_cube</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>generate_frames.py</strong> script renders the QM and MM regions of the molecular system differently, so it’s obvious which is which. It plots two isosurfaces for the positive and negative values of the density difference. The MM dipoles are then plotted using functions in <strong>cgo_arrow.py</strong>. PyMOL will render all of these things and output a frame for each time step of the calculation.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pymol</span>
+
+<span class="kn">from</span> <span class="nn">cgo_arrow</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">extract_dipoles</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="c1">#------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">return_geometry</span><span class="p">(</span><span class="n">f_xyz</span><span class="p">):</span>
+  <span class="sd">''' Grab lists of x/y/z coordinates from a file </span>
+
+<span class="sd">      Note: this assumes no blank lines in the file </span>
+<span class="sd">  '''</span>
+
+  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+  <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">f_xyz</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> 
+    <span class="n">z</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> 
+
+  <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+
+<span class="c1"># define file names</span>
+<span class="n">logfile</span>    <span class="o">=</span> <span class="s1">'water-qmmmpol-rt.log'</span>
+<span class="n">fchkfile</span>   <span class="o">=</span> <span class="s1">'water-qmmmpol-rt.fchk'</span>
+<span class="n">qm_geom</span>    <span class="o">=</span> <span class="s1">'qm.xyz'</span>
+<span class="n">mm_geom</span>    <span class="o">=</span> <span class="s1">'mm.xyz'</span>
+<span class="n">mm_origins</span> <span class="o">=</span> <span class="s1">'mm-origins.xyz'</span>
+
+<span class="c1"># grab the positions of the mm atoms</span>
+<span class="c1"># Note: this may be a truncated list compared to the whole MM geometry since</span>
+<span class="c1">#       not all sites may have induced dipoles</span>
+<span class="c1"># Note: this code assumes that these origins are in the same order as those</span>
+<span class="c1">#       printed in the logfile</span>
+<span class="n">mm_x</span><span class="p">,</span> <span class="n">mm_y</span><span class="p">,</span> <span class="n">mm_z</span> <span class="o">=</span> <span class="n">return_geometry</span><span class="p">(</span><span class="n">mm_origins</span><span class="p">)</span>
+<span class="n">n_mm</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mm_x</span><span class="p">)</span>
+
+<span class="c1"># grab the dipoles from the log file</span>
+<span class="n">dipoles</span> <span class="o">=</span> <span class="n">extract_dipoles</span><span class="p">(</span><span class="n">logfile</span><span class="p">,</span><span class="n">n_mm</span><span class="p">)</span>
+
+<span class="c1"># start pymol </span>
+<span class="n">pymol</span><span class="o">.</span><span class="n">finish_launching</span><span class="p">()</span>
+
+<span class="c1"># start numbering for the frames (not the same as the cubes)</span>
+<span class="n">file_num</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># define how many cube files to skip and how often the density difference</span>
+<span class="c1"># was printed during the RT calculation</span>
+<span class="n">nskip</span><span class="p">,</span> <span class="n">nprint</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="c1"># define the starting and ending indices for the cube files </span>
+<span class="n">istart</span><span class="p">,</span> <span class="n">iend</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="c1"># define the isosurface value and the scale factor for the MM dipoles</span>
+<span class="n">iso_val</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.0004</span><span class="p">,</span> <span class="mi">50</span>
+
+<span class="c1"># create a directory to store the new fchk/cube files</span>
+<span class="n">fchk_cube_dir</span> <span class="o">=</span> <span class="s1">'fchk-cube-files'</span>
+<span class="n">frames_dir</span>    <span class="o">=</span> <span class="s1">'pymol-frames'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">frames_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">frames_dir</span><span class="p">)</span>
+
+<span class="c1"># Loop over the frames for each step to be rendered </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">,</span><span class="n">nskip</span><span class="p">):</span>
+
+    <span class="c1"># clear the frame </span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">reinitialize</span><span class="p">()</span>
+
+    <span class="c1"># plot the qm region</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">qm_geom</span><span class="p">,</span> <span class="s1">'qm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">'sticks'</span><span class="p">,</span> <span class="s1">'qm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">'spheres'</span><span class="p">,</span> <span class="s1">'qm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'stick_radius'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'qm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'sphere_scale'</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+    
+    <span class="c1"># plot the mm region</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">mm_geom</span><span class="p">,</span> <span class="s1">'mm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">'sticks'</span><span class="p">,</span> <span class="s1">'mm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'stick_radius'</span><span class="p">,</span><span class="mf">0.025</span><span class="p">,</span><span class="s1">'mm'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">'gray'</span><span class="p">,</span><span class="s1">'name C*'</span><span class="p">)</span>
+    
+    <span class="c1"># plot the density difference</span>
+    <span class="n">cube_file</span>  <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">-</span><span class="si">%04d</span><span class="s1">.cube'</span> <span class="o">%</span> <span class="p">(</span><span class="n">fchk_cube_dir</span><span class="p">,</span> <span class="n">fchkfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cube_file</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">cube_file</span><span class="p">,</span> <span class="s1">'cube'</span> <span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">isosurface</span><span class="p">(</span><span class="s1">'surf1'</span><span class="p">,</span> <span class="s1">'cube'</span><span class="p">,</span>  <span class="n">iso_val</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">isosurface</span><span class="p">(</span><span class="s1">'surf2'</span><span class="p">,</span> <span class="s1">'cube'</span><span class="p">,</span> <span class="o">-</span><span class="n">iso_val</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">'tv_yellow'</span><span class="p">,</span> <span class="s1">'surf1'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">'tv_blue'</span><span class="p">,</span><span class="s1">'surf2'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'transparency'</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s1">'surf1'</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'transparency'</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s1">'surf2'</span><span class="p">)</span>
+    
+    <span class="c1"># plot the dipole differences</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_mm</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s1">'arrow-</span><span class="si">%03d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">j</span>
+        <span class="n">o_x</span><span class="p">,</span> <span class="n">o_y</span><span class="p">,</span> <span class="n">o_z</span> <span class="o">=</span> <span class="n">mm_x</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">mm_y</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">mm_z</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">e_x</span><span class="p">,</span> <span class="n">e_y</span><span class="p">,</span> <span class="n">e_z</span> <span class="o">=</span> <span class="n">o_x</span> <span class="o">+</span> <span class="n">scale</span><span class="o">*</span><span class="n">dipoles</span><span class="p">[</span><span class="n">nprint</span><span class="o">*</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> \
+                        <span class="n">o_y</span> <span class="o">+</span> <span class="n">scale</span><span class="o">*</span><span class="n">dipoles</span><span class="p">[</span><span class="n">nprint</span><span class="o">*</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> \
+                        <span class="n">o_z</span> <span class="o">+</span> <span class="n">scale</span><span class="o">*</span><span class="n">dipoles</span><span class="p">[</span><span class="n">nprint</span><span class="o">*</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">cgo_arrow</span><span class="p">(</span><span class="n">atom1</span><span class="o">=</span><span class="p">[</span><span class="n">o_x</span><span class="p">,</span><span class="n">o_y</span><span class="p">,</span><span class="n">o_z</span><span class="p">],</span><span class="n">atom2</span><span class="o">=</span><span class="p">[</span><span class="n">e_x</span><span class="p">,</span><span class="n">e_y</span><span class="p">,</span><span class="n">e_z</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">'tv_green'</span><span class="p">,</span>
+                  <span class="n">radius</span><span class="o">=</span><span class="mf">0.025</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># reset the camera </span>
+    <span class="c1"># Note: this needs to be determined for each system individually through</span>
+    <span class="c1">#       trial and error</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">zoom</span><span class="p">()</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="s1">'z'</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">zoom</span><span class="p">(</span><span class="s1">'center'</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="s1">'z'</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">turn</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="c1"># save the frame</span>
+    <span class="n">out_file</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/frame-</span><span class="si">%04d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">frames_dir</span><span class="p">,</span> <span class="n">file_num</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">bg_color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"grey10"</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'volume_layers'</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">1600</span><span class="p">,</span><span class="mi">900</span><span class="p">)</span>
+    <span class="n">pymol</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">png</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mf">400.0</span><span class="p">)</span>
+
+    <span class="n">file_num</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next step is optional. If the simulation involves applying a field to the system, you may want to show that in the movie. The <strong>add_field.py</strong> script will grab the field definition from the output file and plot it over the frames generated with PyMOL.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">grab_field</span><span class="p">(</span><span class="n">logfile</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Grab the field from a log file and save it in field.csv</span>
+<span class="sd">    '''</span>
+
+    <span class="n">dip_x</span><span class="p">,</span> <span class="n">dip_y</span><span class="p">,</span> <span class="n">dip_z</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">logfile</span><span class="p">,</span><span class="s1">'r'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+
+      <span class="c1"># grab the field </span>
+      <span class="k">if</span> <span class="s1">'Ex='</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">'Ey='</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span> 
+        <span class="n">contents</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> 
+        <span class="n">dip_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">dip_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">dip_z</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+
+      <span class="c1"># grab the time</span>
+      <span class="k">if</span> <span class="s1">'Time ='</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="n">contents</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> 
+        <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c1"># build the list of parameters and write to the file</span>
+    <span class="n">write_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dip_x</span><span class="p">)):</span>
+      <span class="n">write_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">dip_x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">dip_y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">dip_z</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"field.csv"</span><span class="p">,</span><span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  
+        <span class="n">cw</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">cw</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">write_list</span><span class="p">)</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+
+<span class="c1">#------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">plot_field</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">,</span><span class="n">nskip</span><span class="p">,</span><span class="n">timestep</span><span class="p">,</span><span class="n">nprint</span><span class="p">,</span><span class="n">direction</span><span class="p">,</span><span class="n">field_dir</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Plot the field stored in field.csv</span>
+
+<span class="sd">    Saves several transparent images in the field_dir folder. Each image plots </span>
+<span class="sd">    one direction of the field and has a verticle line for the current time. </span>
+<span class="sd">    '''</span>
+
+    <span class="n">au2fs</span> <span class="o">=</span> <span class="mf">0.0241888425</span>
+    <span class="n">field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">'field.csv'</span><span class="p">,</span><span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
+
+    <span class="n">direction_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">field</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">au2fs</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">field</span><span class="p">[:,</span><span class="n">direction_dict</span><span class="p">[</span><span class="n">direction</span><span class="p">]]</span><span class="o">*</span><span class="mf">1e3</span>
+    
+    <span class="n">file_num</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">,</span><span class="n">nskip</span><span class="p">):</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/field-</span><span class="si">%04d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">field_dir</span><span class="p">,</span> <span class="n">file_num</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+    
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">nprint</span><span class="o">*</span><span class="n">timestep</span><span class="o">*</span><span class="n">step</span><span class="o">*</span><span class="n">au2fs</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    
+        <span class="c1"># label Y axis and make it white</span>
+        <span class="n">ylabel</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Applied E$_</span><span class="si">%s</span><span class="s2">$ [10$^</span><span class="si">{3}</span><span class="s2">$ au]"</span> <span class="o">%</span> <span class="n">direction</span><span class="p">)</span>
+        <span class="n">ylabel</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span>
+
+        <span class="c1"># label X axis and make it white</span>
+        <span class="n">xlabel</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Time [fs]"</span><span class="p">)</span>
+        <span class="n">xlabel</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">'white'</span><span class="p">)</span>
+    
+        <span class="c1"># make x and y tick labels white as well</span>
+        <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()]</span>
+        <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s2">"white"</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+    
+        <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">bottom</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="c1">#       plt.xlim(0,5)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s1">'.png'</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">file_num</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+
+<span class="c1">#------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">add_field_to_frame</span><span class="p">(</span><span class="n">nskip</span><span class="p">,</span><span class="n">nprint</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">nfiles</span><span class="p">,</span><span class="n">timestep</span><span class="p">,</span><span class="n">field_dir</span><span class="p">,</span><span class="n">frames_dir</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Adds the generated plots of the field to the frame generated in pymol</span>
+<span class="sd">    '''</span>
+
+    <span class="n">au2fs</span> <span class="o">=</span> <span class="mf">0.0241888425</span>
+
+    <span class="c1"># loop over each file and add the appropriate image for the field</span>
+    <span class="k">for</span> <span class="n">nfile</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nfiles</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Working on nfile = "</span><span class="p">,</span> <span class="n">nfile</span><span class="p">)</span>
+    
+        <span class="c1"># define name of image with field</span>
+        <span class="n">field_name</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/field-</span><span class="si">%04d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">field_dir</span><span class="p">,</span> <span class="n">nfile</span><span class="p">)</span>
+ 
+        <span class="c1"># define name of image from pymol</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/frame-</span><span class="si">%04d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">frames_dir</span><span class="p">,</span> <span class="n">nfile</span><span class="p">)</span>
+   
+        <span class="c1"># add the field to the frame </span>
+        <span class="n">img</span>   <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">frame</span><span class="o">+</span><span class="s1">'.png'</span><span class="p">)</span>
+        <span class="n">field</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">field_name</span><span class="o">+</span><span class="s1">'.png'</span><span class="p">)</span>
+        <span class="n">field</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">)</span> 
+        <span class="n">img</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">field</span><span class="p">,(</span><span class="mi">1100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">mask</span><span class="o">=</span><span class="n">field</span><span class="p">)</span>
+    
+        <span class="c1"># add the time to the frame</span>
+        <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">font</span> <span class="o">=</span> <span class="n">ImageFont</span><span class="o">.</span><span class="n">truetype</span><span class="p">(</span><span class="s2">"Helvetica.ttf"</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">nskip</span><span class="o">*</span><span class="n">nprint</span><span class="o">*</span><span class="n">nfile</span><span class="o">*</span><span class="n">timestep</span><span class="o">*</span><span class="n">au2fs</span>
+        <span class="n">captiontext</span> <span class="o">=</span> <span class="s2">"Time = </span><span class="si">%.3f</span><span class="s2"> fs"</span> <span class="o">%</span> <span class="n">time</span>
+        <span class="n">wh</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">captiontext</span><span class="p">)</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">wh</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">wh</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> 
+                  <span class="n">captiontext</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+
+        <span class="n">final_image</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">/frame-</span><span class="si">%04d</span><span class="s1">-with-field.png'</span> <span class="o">%</span> <span class="p">(</span><span class="n">field_dir</span><span class="p">,</span> <span class="n">nfile</span><span class="p">)</span>      
+        <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">final_image</span><span class="p">)</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
+
+<span class="c1"># define how many cube files to skip and how often the density difference</span>
+<span class="c1"># was printed during the RT calculation</span>
+<span class="n">nskip</span><span class="p">,</span> <span class="n">nprint</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="c1"># define the starting and ending indices for the cube files </span>
+<span class="n">istart</span><span class="p">,</span> <span class="n">iend</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="c1"># define time step from RT calculation in au</span>
+<span class="n">timestep</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1"># define the direction of the applied field</span>
+<span class="n">direction</span> <span class="o">=</span> <span class="s1">'z'</span>
+
+<span class="c1"># define the size of the added image</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span>
+
+<span class="c1"># extract the field from the log file</span>
+<span class="n">logfile</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">grab_field</span><span class="p">(</span><span class="n">logfile</span><span class="p">)</span>
+
+<span class="c1"># plot the field for each frame</span>
+<span class="n">field_dir</span>  <span class="o">=</span> <span class="s1">'pymol-frames-w-field'</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">field_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">field_dir</span><span class="p">)</span>
+<span class="n">plot_field</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">,</span><span class="n">nskip</span><span class="p">,</span><span class="n">timestep</span><span class="p">,</span><span class="n">nprint</span><span class="p">,</span><span class="n">direction</span><span class="p">,</span><span class="n">field_dir</span><span class="p">)</span>
+
+<span class="c1"># add the field and the time to the frame</span>
+<span class="n">frames_dir</span> <span class="o">=</span> <span class="s1">'pymol-frames'</span>
+<span class="n">nfiles</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">istart</span><span class="p">,</span><span class="n">iend</span><span class="p">,</span><span class="n">nskip</span><span class="p">)))</span>
+<span class="n">add_field_to_frame</span><span class="p">(</span><span class="n">nskip</span><span class="p">,</span><span class="n">nprint</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">nfiles</span><span class="p">,</span><span class="n">timestep</span><span class="p">,</span><span class="n">field_dir</span><span class="p">,</span><span class="n">frames_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The last thing to do is combine all the frames into a single movie. You can use <a href="https://www.ffmpeg.org/">ffmpeg</a> to accomplish this pretty easily. At the end of the day you have a beautiful movie showing how the electrons move around in a complex simulation.</p>
+<p>Here's one more video showing the full version of the video in the Github example. I hope you enjoy these videos!</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">'JckYRO7C8Ww'</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<iframe allowfullscreen="" frameborder="0" height="450" src="https://www.youtube.com/embed/JckYRO7C8Ww" width="800"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+</div>
+	</div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Patrick Lestrange</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
