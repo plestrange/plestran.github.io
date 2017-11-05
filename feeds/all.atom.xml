@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Flash Facts</title><link href="http://plestran.github.io/" rel="alternate"></link><link href="http://plestran.github.io/feeds/all.atom.xml" rel="self"></link><id>http://plestran.github.io/</id><updated>2017-11-04T09:00:00-07:00</updated><entry><title>Real-time Electronic Dynamics</title><link href="http://plestran.github.io/real-time-electronic-dynamics.html" rel="alternate"></link><published>2017-11-04T09:00:00-07:00</published><updated>2017-11-04T09:00:00-07:00</updated><author><name>Patrick Lestrange</name></author><id>tag:plestran.github.io,2017-11-04:real-time-electronic-dynamics.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Flash Facts</title><link href="http://plestran.github.io/" rel="alternate"></link><link href="http://plestran.github.io/feeds/all.atom.xml" rel="self"></link><id>http://plestran.github.io/</id><updated>2017-11-04T09:00:00-07:00</updated><entry><title>Watching Electrons Absorb Light</title><link href="http://plestran.github.io/watching-electrons-absorb-light.html" rel="alternate"></link><published>2017-11-04T09:00:00-07:00</published><updated>2017-11-04T09:00:00-07:00</updated><author><name>Patrick Lestrange</name></author><id>tag:plestran.github.io,2017-11-04:watching-electrons-absorb-light.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1016,15 +1016,8 @@ h6:hover .anchor-link {
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;html&lt;/span&gt;
-&lt;p&gt;
-&lt;a href="https://commons.wikimedia.org/wiki/File:QuantumHarmonicOscillatorAnimation.gif#/media/File:QuantumHarmonicOscillatorAnimation.gif"&gt;
-&lt;img src="https://upload.wikimedia.org/wikipedia/commons/9/90/QuantumHarmonicOscillatorAnimation.gif" alt="QuantumHarmonicOscillatorAnimation.gif" width="400"&gt;&lt;/a&gt;
-&lt;br&gt;By &lt;a href="//commons.wikimedia.org/wiki/User:Sbyrnes321" title="User:Sbyrnes321"&gt;Sbyrnes321&lt;/a&gt; - 
-&lt;span class="int-own-work" lang="en"&gt;Own work&lt;/span&gt;, 
-&lt;a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication"&gt;CC0&lt;/a&gt;, 
-&lt;a href="https://commons.wikimedia.org/w/index.php?curid=14059905"&gt;Link&lt;/a&gt;
-&lt;/p&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Image&lt;/span&gt;
+&lt;span class="n"&gt;Image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"https://upload.wikimedia.org/wikipedia/commons/9/90/QuantumHarmonicOscillatorAnimation.gif"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1032,16 +1025,9 @@ h6:hover .anchor-link {
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
-&lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_html rendered_html output_subarea "&gt;
-&lt;p&gt;
-&lt;a href="https://commons.wikimedia.org/wiki/File:QuantumHarmonicOscillatorAnimation.gif#/media/File:QuantumHarmonicOscillatorAnimation.gif"&gt;
-&lt;img alt="QuantumHarmonicOscillatorAnimation.gif" src="https://upload.wikimedia.org/wikipedia/commons/9/90/QuantumHarmonicOscillatorAnimation.gif" width="400" /&gt;&lt;/a&gt;
-&lt;br /&gt;By &lt;a href="//commons.wikimedia.org/wiki/User:Sbyrnes321" title="User:Sbyrnes321"&gt;Sbyrnes321&lt;/a&gt; - 
-&lt;span class="int-own-work" lang="en"&gt;Own work&lt;/span&gt;, 
-&lt;a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" title="Creative Commons Zero, Public Domain Dedication"&gt;CC0&lt;/a&gt;, 
-&lt;a href="https://commons.wikimedia.org/w/index.php?curid=14059905"&gt;Link&lt;/a&gt;
-&lt;/p&gt;
+&lt;div class="prompt output_prompt"&gt;Out[2]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/9/90/QuantumHarmonicOscillatorAnimation.gif" width="400" /&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1061,8 +1047,7 @@ h6:hover .anchor-link {
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;IPython.display&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Image&lt;/span&gt;
-&lt;span class="n"&gt;Image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/Articleimage/2012/CS/c2cs15297e/c2cs15297e-f3.gif"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/Articleimage/2012/CS/c2cs15297e/c2cs15297e-f3.gif"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1072,8 +1057,8 @@ h6:hover .anchor-link {
 &lt;div class="output_area"&gt;
 &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 &lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
-&lt;img src="http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/Articleimage/2012/CS/c2cs15297e/c2cs15297e-f3.gif" width="600"&gt;
-&lt;/img&gt;&lt;/div&gt;
+&lt;img src="http://pubs.rsc.org/services/images/RSCpubs.ePlatform.Service.FreeContent.ImageService.svc/ImageService/Articleimage/2012/CS/c2cs15297e/c2cs15297e-f3.gif" width="600" /&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
