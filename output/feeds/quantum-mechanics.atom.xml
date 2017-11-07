@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Flash Facts</title><link href="http://plestran.github.io/" rel="alternate"></link><link href="http://plestran.github.io/feeds/quantum-mechanics.atom.xml" rel="self"></link><id>http://plestran.github.io/</id><updated>2017-11-04T09:00:00-07:00</updated><entry><title>Watching Electrons Absorb Light</title><link href="http://plestran.github.io/watching-electrons-absorb-light.html" rel="alternate"></link><published>2017-11-04T09:00:00-07:00</published><updated>2017-11-04T09:00:00-07:00</updated><author><name>Patrick Lestrange</name></author><id>tag:plestran.github.io,2017-11-04:watching-electrons-absorb-light.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Flash Facts - quantum-mechanics</title><link href="http://plestran.github.io/" rel="alternate"></link><link href="http://plestran.github.io/feeds/quantum-mechanics.atom.xml" rel="self"></link><id>http://plestran.github.io/</id><updated>2017-11-04T09:00:00-07:00</updated><entry><title>Watching Electrons Absorb Light</title><link href="http://plestran.github.io/watching-electrons-absorb-light.html" rel="alternate"></link><published>2017-11-04T09:00:00-07:00</published><updated>2017-11-04T09:00:00-07:00</updated><author><name>Patrick Lestrange</name></author><id>tag:plestran.github.io,2017-11-04:/watching-electrons-absorb-light.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I wanted connect this blog to some of the things I worked on while getting my PhD. I'm going to explain a little about how to make a movie using data from a calculation I would do. Note: I didn't actually do these calculations, but I did make the videos.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1619,4 +1624,4 @@ h6:hover .anchor-link {
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="electronic-structure-theory"></category></entry></feed>
+</content><category term="electronic-structure-theory"></category></entry></feed>
