@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Flash Facts</title><link href="http://plestran.github.io/" rel="alternate"></link><link href="http://plestran.github.io/feeds/politics.atom.xml" rel="self"></link><id>http://plestran.github.io/</id><updated>2017-10-21T09:00:00-07:00</updated><entry><title>State of the Union</title><link href="http://plestran.github.io/state-of-the-union.html" rel="alternate"></link><published>2017-10-21T09:00:00-07:00</published><updated>2017-10-21T09:00:00-07:00</updated><author><name>Patrick Lestrange</name></author><id>tag:plestran.github.io,2017-10-21:state-of-the-union.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Flash Facts - politics</title><link href="http://plestran.github.io/" rel="alternate"></link><link href="http://plestran.github.io/feeds/politics.atom.xml" rel="self"></link><id>http://plestran.github.io/</id><updated>2017-10-21T09:00:00-07:00</updated><entry><title>State of the Union</title><link href="http://plestran.github.io/state-of-the-union.html" rel="alternate"></link><published>2017-10-21T09:00:00-07:00</published><updated>2017-10-21T09:00:00-07:00</updated><author><name>Patrick Lestrange</name></author><id>tag:plestran.github.io,2017-10-21:/state-of-the-union.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The State of the Union (SOTU) address is an address by the president of the United States to a joint session of Congress. This is a way for the president to comment on the well, state of the union. Legislative agendas and policy priorities are outlined. They tend to be fairly optimistic about the near term prospects for the country.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2323,4 +2328,4 @@ Topic #14: measures representatives indians house satisfaction provision informa
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="state-of-the-union"></category></entry></feed>
+</content><category term="state-of-the-union"></category></entry></feed>
