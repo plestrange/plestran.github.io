@@ -2629,10 +2629,7 @@ h6:hover .anchor-link {
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'figure.figsize'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_extraction.text&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;TfidfVectorizer&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_extraction.text&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;CountVectorizer&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.decomposition&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;NMF&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.decomposition&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LatentDirichletAllocation&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;metrics&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3714,11 +3711,10 @@ Kurtosis       : 1.17
 
 &lt;span class="c1"&gt;# define the number of samples, features, topics, and how many &lt;/span&gt;
 &lt;span class="c1"&gt;# words/documents to display later on&lt;/span&gt;
-&lt;span class="n"&gt;n_samples&lt;/span&gt;       &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2000&lt;/span&gt;
 &lt;span class="n"&gt;n_features&lt;/span&gt;      &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;
 &lt;span class="n"&gt;n_topics&lt;/span&gt;        &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;15&lt;/span&gt;
 &lt;span class="n"&gt;n_top_words&lt;/span&gt;     &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="n"&gt;n_top_documents&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;span class="n"&gt;n_top_documents&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3764,8 +3760,7 @@ Kurtosis       : 1.17
 &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Fit the NMF model using the Frobenius norm&lt;/span&gt;
 &lt;span class="n"&gt;nmf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;NMF&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_components&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;n_topics&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
-          &lt;span class="n"&gt;alpha&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;l1_ratio&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;solver&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'mu'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-          &lt;span class="n"&gt;beta_loss&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'frobenius'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tfidf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="n"&gt;solver&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'mu'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;beta_loss&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'frobenius'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tfidf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;Topics in NMF model (Frobenius norm):&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;tfidf_feature_names&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tfidf_vectorizer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_feature_names&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -3783,110 +3778,185 @@ Kurtosis       : 1.17
 &lt;pre&gt;
 Topics in NMF model (Frobenius norm):
 
-Topic #0: general present subject 000 citizens shall law department act attention
-    millard fillmore on 1851-12-02
-      andrew jackson on 1829-12-08
-      james buchanan on 1858-12-06
-      andrew jackson on 1832-12-04
-    millard fillmore on 1852-12-06
+Topic #0: general 000 subject department secretary report law attention service act
+       ulysses grant on 1872-12-02
+    rutherford hayes on 1879-12-01
+    grover cleveland on 1886-12-06
+      chester arthur on 1881-12-06
+       ulysses grant on 1876-12-05
+      chester arthur on 1882-12-04
+    grover cleveland on 1888-12-03
+    rutherford hayes on 1878-12-02
+    rutherford hayes on 1880-12-06
+       ulysses grant on 1873-12-01
 
-Topic #1: america tonight americans help american world years let budget make
-     william clinton on 1998-01-27
+Topic #1: america tonight help americans american let years children world budget
      william clinton on 1997-02-04
-     william clinton on 2000-01-27
+     william clinton on 1998-01-27
      william clinton on 1999-01-19
+     william clinton on 2000-01-27
+         george bush on 1989-02-09
         georgeW bush on 2004-01-20
+       ronald reagan on 1986-02-04
+        georgeW bush on 2006-01-31
+        georgeW bush on 2008-01-28
+     william clinton on 1996-01-23
 
-Topic #2: program federal economic legislation administration programs development farm housing problems
+Topic #2: program economic federal legislation farm development problems world administration housing
    dwight eisenhower on 1956-01-05
    dwight eisenhower on 1957-01-10
+   dwight eisenhower on 1955-01-06
+        harry truman on 1947-01-06
         jimmy carter on 1978-01-19
         jimmy carter on 1980-01-21
         jimmy carter on 1979-01-25
+   dwight eisenhower on 1954-01-07
+        jimmy carter on 1981-01-16
+       richard nixon on 1974-01-30
 
-Topic #3: world economic free strength defense today shall military freedom production
-   dwight eisenhower on 1959-01-09
-   dwight eisenhower on 1958-01-09
-  franklin roosevelt on 1941-01-06
-        harry truman on 1952-01-09
-   dwight eisenhower on 1953-02-02
+Topic #3: shall citizens commerce present necessary objects debt object powers fellow
+    thomas jefferson on 1808-11-08
+    thomas jefferson on 1806-12-02
+    thomas jefferson on 1807-10-27
+    thomas jefferson on 1803-10-17
+    thomas jefferson on 1802-12-15
+    thomas jefferson on 1801-12-08
+        james monroe on 1824-12-07
+      andrew jackson on 1831-12-06
+   george washington on 1790-12-08
+    thomas jefferson on 1804-11-08
 
-Topic #4: men work conditions interstate law labor industrial business man corporations
+Topic #4: men world conditions work law labor shall business american interstate
   theodore roosevelt on 1908-12-08
   theodore roosevelt on 1901-12-03
+      woodrow wilson on 1918-12-02
+  theodore roosevelt on 1906-12-03
   theodore roosevelt on 1905-12-05
   theodore roosevelt on 1904-12-06
   theodore roosevelt on 1907-12-03
+  theodore roosevelt on 1902-12-02
+      woodrow wilson on 1919-12-02
+      woodrow wilson on 1914-12-08
 
-Topic #5: soviet world free aggression union challenge countries know economic meet
-        jimmy carter on 1980-01-23
-   dwight eisenhower on 1953-02-02
+Topic #5: world soviet free economic freedom strength military today defense aggression
         harry truman on 1953-01-07
+   dwight eisenhower on 1953-02-02
         harry truman on 1951-01-08
-       ronald reagan on 1987-01-27
+        harry truman on 1952-01-09
+   dwight eisenhower on 1958-01-09
+   dwight eisenhower on 1959-01-09
+        jimmy carter on 1980-01-23
+   dwight eisenhower on 1960-01-07
+   dwight eisenhower on 1961-01-12
+  franklin roosevelt on 1941-01-06
 
-Topic #6: 000 cent construction agriculture budget relief board veterans banks expenditures
+Topic #6: 000 cent federal debt banks present relief agriculture construction budget
       herbert hoover on 1930-12-02
       herbert hoover on 1929-12-03
+      herbert hoover on 1931-12-08
     johnquincy adams on 1826-12-05
      calvin coolidge on 1927-12-06
      calvin coolidge on 1928-12-04
+      herbert hoover on 1932-12-06
+     calvin coolidge on 1926-12-07
+     calvin coolidge on 1925-12-08
+      woodrow wilson on 1920-12-07
 
-Topic #7: enemy british american command britain arms officer ships force having
+Topic #7: enemy british american britain command naval ships arms force forces
        james madison on 1813-12-07
        james madison on 1814-09-20
        james madison on 1812-11-04
        james madison on 1811-11-05
   franklin roosevelt on 1942-01-06
+       james madison on 1809-11-29
+  franklin roosevelt on 1945-01-06
+  franklin roosevelt on 1943-01-07
+       james madison on 1810-12-05
+    thomas jefferson on 1808-11-08
 
-Topic #8: mexico texas mexican treaty territory minister executive treasury terms enemy
+Topic #8: mexico texas mexican treaty minister territory treasury duty executive duties
           james polk on 1846-12-08
+          john tyler on 1844-12-03
+          john tyler on 1844-12-03
           james polk on 1847-12-07
-          john tyler on 1844-12-03
-          john tyler on 1844-12-03
           james polk on 1845-12-02
+          john tyler on 1843-12-05
+          james polk on 1848-12-05
+      zachary taylor on 1849-12-04
+      james buchanan on 1859-12-19
+          john tyler on 1842-12-06
 
-Topic #9: gold silver notes currency circulation banks treasury bonds value bank
+Topic #9: notes gold silver currency banks treasury circulation bank bonds money
     grover cleveland on 1895-12-02
      martin vanburen on 1839-12-02
-    william mckinley on 1897-12-06
+      andrew jackson on 1836-12-05
     grover cleveland on 1894-12-03
       andrew johnson on 1868-12-09
+      james buchanan on 1857-12-08
+          john tyler on 1842-12-06
+      andrew johnson on 1867-12-03
+          john tyler on 1841-12-07
+    rutherford hayes on 1877-12-03
 
-Topic #10: billion programs million percent program budget act tax cities expenditures
+Topic #10: billion programs million budget percent program shall federal act tax
       lyndon johnson on 1968-01-17
       lyndon johnson on 1969-01-14
        ronald reagan on 1981-02-18
         harry truman on 1946-01-21
       lyndon johnson on 1967-01-10
+      lyndon johnson on 1964-01-08
+      lyndon johnson on 1966-01-12
+       ronald reagan on 1982-01-26
+       richard nixon on 1973-02-02
+  franklin roosevelt on 1939-01-04
 
-Topic #11: spain treaty spanish minister article negotiation view tribes coast commissioners
+Topic #11: spain treaty minister article spanish vessels france french commissioners treasury
         james monroe on 1819-12-07
         james monroe on 1818-11-16
         james monroe on 1820-11-14
-    william mckinley on 1897-12-06
         james monroe on 1821-12-03
+          john adams on 1798-12-08
+          john adams on 1797-11-22
+      andrew jackson on 1833-12-03
+    william mckinley on 1897-12-06
+        james monroe on 1822-12-03
+        james monroe on 1823-12-02
 
-Topic #12: jobs energy like job deficit work want companies know right
+Topic #12: jobs want job know right work workers like tax economy
         barack obama on 2012-01-24
         barack obama on 2013-02-12
-        barack obama on 2011-01-25
         barack obama on 2010-01-27
+        barack obama on 2015-01-20
         barack obama on 2014-01-28
+        barack obama on 2011-01-25
+     william clinton on 1993-02-17
+     william clinton on 1994-01-25
+        barack obama on 2016-01-12
+        barack obama on 2009-02-24
 
-Topic #13: energy oil programs inflation nuclear percent major federal soviet billion
+Topic #13: programs energy oil federal inflation soviet nuclear percent major years
          gerald ford on 1975-01-15
          gerald ford on 1977-01-12
         jimmy carter on 1980-01-21
         jimmy carter on 1981-01-16
+        jimmy carter on 1979-01-25
+       richard nixon on 1974-01-30
         jimmy carter on 1978-01-19
+       ronald reagan on 1982-01-26
+        jimmy carter on 1978-01-19
+       richard nixon on 1973-02-02
 
-Topic #14: measures representatives indians house satisfaction provision information commerce ought shall
-   george washington on 1795-12-08
+Topic #14: measures indians representatives provision house senate information ought commissioners regard
    george washington on 1790-01-08
+   george washington on 1795-12-08
+   george washington on 1792-11-06
    george washington on 1791-10-25
    george washington on 1790-12-08
-   george washington on 1792-11-06
+   george washington on 1793-12-03
+          john adams on 1797-11-22
+   george washington on 1796-12-07
+          john adams on 1798-12-08
+      woodrow wilson on 1916-12-05
 
 &lt;/pre&gt;
 &lt;/div&gt;
@@ -3901,11 +3971,13 @@ Topic #14: measures representatives indians house satisfaction provision informa
 &lt;p&gt;Ok, now we have some interesting stuff to talk about! Let's breakdown these topics and see what these SOTUs have in common.&lt;/p&gt;
 &lt;p&gt;Interestingly, many of these topics are attributed to SOTUs from common eras. This is likely because the problems of an era are addressed by the presidents of those eras. The really interesting results are when well-separated SOTUs are grouped together. We'll mostly focus on those, but will mention some other interesting points in history.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Topic #5: This one looks to be about the Soviet Union as an aggressor and economic power that challenged the US. Truman and Eisenhower were concerned about this during the height of McCarthyism. Carter and Reagan spoke about the Soviet Union during the Soviet-Afghan War.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Topic #5: This one looks to be about the Soviet Union as an aggressor and economic power that challenged the US. Truman and Eisenhower were concerned about this during the height of McCarthyism. Carter spoke about the Soviet Union during the Soviet-Afghan War.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Topic #8: Madison's and Roosevelt's presidencies are separated by 100+ years, so it's a little surprising to see them grouped together. In his addresses Madison is writing about the British during the War of 1812. Roosevelt is speaking about Britain as an ally at the start of the US' involvement in WWII. They're both talking about war and Britain, but as a foe and as an ally.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Topic #7: Madison's and Roosevelt's presidencies are separated by 100+ years, so it's a little surprising to see them grouped together. In his addresses Madison is writing about the British during the War of 1812. Roosevelt is speaking about Britain as an ally at the start of the US' involvement in WWII. They're both talking about war and Britain, but as a foe and as an ally.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Topic #9: Tyler and Polk were understandable concerned about relations with Texas and Mexico. Under Tyler's presidency the Republic of Texas was annexed in 1845. This then sparked the Mexican-American War which lasted through much of Polk's presidency.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Topic #8: Tyler and Polk were understandable concerned about relations with Texas and Mexico. Under Tyler's presidency the Republic of Texas was annexed in 1845. This then sparked the Mexican-American War which lasted through much of Polk's presidency.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Topic #11: Monroe took control of the Florida penninsula from the Spanish and was the first to recognize many South American nations that had gained independence from Spain.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Topic #12: President Obama had to deal with the Great Recession, so jobs and the ability to work were front and center in his addresses.&lt;/p&gt;
 &lt;/li&gt;
